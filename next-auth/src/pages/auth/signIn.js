@@ -8,7 +8,7 @@ export default function signUp(){
      try{
     const data = await signIn("credentials",{redirect:false,email,password})
     if(data.ok) {
-        router.replace("/profile");
+        router.replace("/products");
     } 
     }
      catch(err){
