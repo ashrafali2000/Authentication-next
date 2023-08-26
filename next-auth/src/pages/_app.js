@@ -1,13 +1,15 @@
 import { Header } from '@/components/header'
 import '@/styles/globals.css'
 import { useState } from 'react'
-
-export default function App({ Component, pageProps }) {
-  const [name , setName ] = useState("");
+import { SessionProvider } from "next-auth/react"
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}){
   return(
-  <div>
+<SessionProvider session={session}>
     <Header></Header>
-<Component {...pageProps} name = {name} setName = {setName} />
-  </div> 
+      <Component {...pageProps} />
+    </SessionProvider>
   )
 }
