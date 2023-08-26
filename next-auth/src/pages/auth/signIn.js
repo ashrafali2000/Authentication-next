@@ -1,6 +1,8 @@
 import Form from "@/components/form";
 import {signIn} from "next-auth/react"
 import { useRouter } from "next/router";
+import { getSession } from "next-auth/react"
+
 export default function signUp({setName}){
     const router = useRouter();
 
@@ -9,7 +11,6 @@ export default function signUp({setName}){
     const data = await signIn("credentials",{redirect:false,email,password})
     console.log(data)
     if(data.ok) {
-        // setName(data.fullName);
         router.replace("/products");
     } 
     }
@@ -23,3 +24,23 @@ export default function signUp({setName}){
         <Form signIn onFormSubmit={onSingIn}></Form>
     </div>)
 }
+
+
+// export async function getServerSideProps({req}){
+//     const session = await getSession({req});
+//     if(session){
+//         return{
+//             redirect:{
+//                 destination:"/profile",
+//                 permenent:false
+//             }
+//         }
+    
+//     }
+
+//     return {
+//         props:{
+//             session
+//         }
+//     }
+// }
