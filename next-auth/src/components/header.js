@@ -1,6 +1,7 @@
-import { signOut } from "next-auth/react";
+// import { signOut } from "next-auth/react";
 
 import Link from "next/link";
+import Btn from "./login_btn";
 
 export const Header = () => {
   return (
@@ -10,18 +11,19 @@ export const Header = () => {
         <Link
           className="shadow-md py-2 px-6 border-[1px] border-black rounded-full border-black font-semibold hover:bg-[#efefef]"
           href={"/profile"}
-        >
+          >
           Profile
         </Link>
-        <Link
+        {/* <Link
           className="shadow-md py-2 px-6 border-[1px] border-black rounded-full border-black font-semibold hover:bg-[#efefef]"
           href={"/auth/signIn"}
-        >
+          >
           Log in
         </Link>
         <div onClick={()=> signOut()}  className="shadow-md py-2 px-6  bg-black rounded-full bg-black text-white cursor-pointer font-semibold hover:opacity-70">
           Log out
-        </div>
+        </div> */}
+          <Btn></Btn>
       </div>
     </div>
   );
