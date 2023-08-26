@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import Link from "next/link";
-
+import { getSession } from "next-auth/react"
 export default function Form({signIn,onFormSubmit}) {
     const fnameRef = useRef();
     const lnameRef = useRef();
@@ -145,3 +145,19 @@ export default function Form({signIn,onFormSubmit}) {
   
     </div>)
 }
+
+// export async function getServerSideProps({req}){
+//   const session = await getSession({req});
+// if(session) {
+//       return{
+//           redirect:{
+//               destination:"/profile",
+//               permenent:false
+//           }
+//       }
+//   }
+//   return {
+//     props:{session}
+// }
+
+// }
