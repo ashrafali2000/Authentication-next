@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-  
+
   export default function Products() {
     const [product, setProducts] = useState([])
 
@@ -21,7 +21,7 @@ import { useEffect, useState } from "react"
                   <img
                     src={product.images[0]}
                     alt={product.imageAlt}
-                    className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                    className="h-full w-full object-cover object-center lg:h-full lg:w-full md:max-lg:flex"
                   />
                 </div>
                 <div className="mt-4 flex justify-between">
@@ -43,3 +43,4 @@ import { useEffect, useState } from "react"
       </div>
     )
   }
+

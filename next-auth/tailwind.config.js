@@ -12,6 +12,10 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        'red':'#f00',
+        'bermuda': '#4ade80',
+      },
     },
   },
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/aspect-ratio')],
